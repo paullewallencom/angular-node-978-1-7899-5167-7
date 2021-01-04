@@ -1,0 +1,239 @@
+{
+	"info": {
+		"_postman_id": "7063842c-a5df-42ba-83f5-321a2c1d846d",
+		"name": "Book App",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://127.0.0.1:3000/user/signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"bilal@gmail.com\",\n  \"password\":\"dott1234\",\n  \"name\":\"Adnan\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/user/signup",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"signup"
+					]
+				},
+				"description": "Testing API"
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:3000/books/book-details/5ae9b1cdd6478b53a0845c1c",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					},
+					{
+						"key": "Authorization",
+						"value": "JWT eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJpbGFsQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVhZTQxMTEyMWY0M2NiMmU4MGIyYzFhYSIsImlhdCI6MTUyNTI2Njk5NiwiZXhwIjoxNTI1MjcwNTk2fQ.oF6JgPTzdXfbKdQEzLjNhciPCL0x1RJyfqeXn1mDZsU"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Book",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "auther",
+							"value": "Adnan Sheikh",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "isbn",
+							"value": "125",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "price",
+							"value": "200",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/books/book-details/5ae9b1cdd6478b53a0845c1c",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"book-details",
+						"5ae9b1cdd6478b53a0845c1c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:3000/books/all-books",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJpbGFsQGdtYWlsLmNvbSIsInVzZXJJZCI6IjVhZTQxMTEyMWY0M2NiMmU4MGIyYzFhYSIsImlhdCI6MTUyNTI2Njk5NiwiZXhwIjoxNTI1MjcwNTk2fQ.oF6JgPTzdXfbKdQEzLjNhciPCL0x1RJyfqeXn1mDZsU"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"title\":\"Test\",\n  \"auther\":\"Adnan\",\n  \"isbn\":\"1234\",\n  \"price\":\"100\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/books/all-books",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"all-books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:3000/user/login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\":\"bilal@gmail.com\",\n  \"password\":\"dott1234\"\n}\n"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/user/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:3000/books/add-book",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"title\":\"Test book\",\n        \"author\":\"Test author\",\n        \"isbn\": 999887766,\n        \"price\":99.95\n}\n"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/books/add-book",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"books",
+						"add-book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://127.0.0.1:3000/user/admin-signup",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\":\"admin@gmail.com\",\n  \"password\":\"dott1234\",\n  \"name\":\"Test Admin\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:3000/user/admin-signup",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "3000",
+					"path": [
+						"user",
+						"admin-signup"
+					]
+				},
+				"description": "For Creating admin"
+			},
+			"response": []
+		}
+	]
+}
